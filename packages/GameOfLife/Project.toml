@@ -1,0 +1,4 @@
+name = "GameOfLife"
+uuid = "ceece0b9-e00e-4c6a-867d-603c2fe18ca7"
+authors = ["klangner <klangner@gmail.com>"]
+version = "0.1.0"
