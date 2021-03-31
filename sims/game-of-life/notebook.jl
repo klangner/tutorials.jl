@@ -172,7 +172,7 @@ md"## Simulator"
 # ╔═╡ 2e203272-8e41-11eb-39c4-5b682e121486
 function simulate(width, height, steps)
 	state = random_state(100, 100, 0.5)
-	states = Vector{WorldState}()
+	states = [state]
 	push!(states, state)
 	
 	for t in 1:steps
@@ -208,8 +208,8 @@ begin
 	N = 1000 	# Simulation steps
 	xs = Vector{Vector{Int64}}()
 	for m ∈ 1:M
-		states = simulate(100, 100, N)
-		x = map(s -> sum(s.cells), states)
+		ss = simulate(100, 100, N)
+		x = map(s -> sum(s.cells), ss)
 		push!(xs, x)
 	end
 	plot(xs)
